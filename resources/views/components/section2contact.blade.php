@@ -2,7 +2,7 @@
 
 <section class="mt-5 container-fluid position-relative">
     <video loop autoplay muted  class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; z-index: -1;">
-        <source src="images/contact.mp4" type="video/mp4">
+        <source src="images/contact_page.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="row">
