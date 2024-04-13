@@ -24,15 +24,12 @@ use Termwind\Components\Dd;
 |
 */
 // Routes pour les différentes pages
-Route::get('/', [homecontroller::class, 'index']);
+Route::get('/', [homecontroller::class, 'index'])->name('about');
 Route::get('/about', [about::class, 'about']);
 
 
 Route::get('/contact', [contactcontrolleur::class, 'contact'])->name('contact');
 Route::post('/login', [contactcontrolleur::class, 'login'])->name('login');
-
-
-
 
 Route::get('/single', [singlecontrolleur::class, 'single']);
 

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 
 class Connexion extends Model
 {
-    protected $table = 'connexion';
+    protected $table = 'users';
     
     protected $fillable = ['email', 'mdp']; 
 
@@ -24,6 +24,7 @@ class Connexion extends Model
         }
 
         // Vérifier si le mot de passe correspond en utilisant Hash::check
-        return Hash::check($password, $user->mdp); // Renvoie true si le mot de passe correspond, sinon false
+        $hashedPassword = Hash::make($password);
+// Renvoie true si le mot de passe correspond, sinon false
     }
 }
