@@ -8,8 +8,8 @@ class CreateParentTable extends Migration
     public function up()
     {
         Schema::create('parent', function (Blueprint $table) {
-            $table->string('CIN', 100)->primary();
-            $table->string('ID_PARENT', 100)->primary();
+            $table->string('CIN', 100);
+            $table->string('ID_PARENT', 100);
             $table->string('ID_ROLE', 100);
             $table->string('NOM', 100)->nullable();
             $table->string('PRENOM', 100)->nullable();
@@ -17,6 +17,9 @@ class CreateParentTable extends Migration
             $table->string('EMAIL', 100)->nullable();
             $table->string('MDP', 100)->nullable();
             $table->date('DATE_DEBUT')->nullable();
+            
+            // Définir la clé primaire composite
+            $table->primary(['CIN', 'ID_PARENT']);
             
             // Foreign key constraints
             $table->foreign('CIN')->references('CIN')->on('personne')->onDelete('cascade');

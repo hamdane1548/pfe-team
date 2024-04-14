@@ -10,7 +10,8 @@ class CreateIncidentTable extends Migration
         Schema::create('incident', function (Blueprint $table) {
             $table->string('ID_INCIDENT', 100)->primary();
             $table->string('ID_VEHICULE', 50);
-            $table->integer('ANNEE_SCOLAIRE');
+            $table->unsignedBigInteger('ANNEE_SCOLAIRE'); // Utilisez unsignedBigInteger() pour les clés étrangères
+
             $table->string('LOCALISATION', 100)->nullable();
             $table->dateTime('DATE_HEURE')->nullable();
             
