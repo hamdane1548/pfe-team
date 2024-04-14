@@ -1,23 +1,26 @@
 <?php
+
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Model\Gerant;
 class Repondre extends Model
 {
-    protected $primaryKey = ['ID_RECLAMATION', 'ID_REC_PARENT', 'CIN', 'ID_GERANT'];
+    use HasFactory;
+
+    protected $table = 'repondre';
     public $incrementing = false;
     protected $keyType = 'string';
-    public $timestamps = false;
 
     protected $fillable = [
         'ID_RECLAMATION',
-        'ID_REC_PARENT',
         'CIN',
-        'ID_GERANT',
         'DATE_REPONSE',
         'REPONSE',
     ];
+
+    // Relations
 
     public function parent()
     {
@@ -39,4 +42,3 @@ class Repondre extends Model
         return $this->belongsTo(RecParent::class, 'ID_REC_PARENT', 'ID_REC_PARENT');
     }
 }
-

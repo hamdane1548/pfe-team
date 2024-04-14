@@ -1,28 +1,19 @@
 <?php
 
-namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Personne;
+
+use App\Models\Role;
+
+use App\Models\Repondre;
 class Gerant extends Model
 {
-    protected $table = 'gerant';   
-     protected $primaryKey = ['CIN', 'ID_GERANT'];
-    public $incrementing = false;
-    protected $keyType = 'string';
-    public $timestamps = false;
+    // Nom de la table associée au modèle
+    protected $table = 'gerant';
 
-    protected $fillable = [
-        'CIN',
-        'ID_GERANT',
-        'ID_ROLE',
-        'NOM',
-        'PRENOM',
-        'TELEPHONE',
-        'EMAIL',
-        'MDP',
-        'DATE_DEBUT'
-    ];
+    // Indique si les colonnes "created_at" et "updated_at" sont utilisées
+    public $timestamps = false;
 
     // Relation avec la table personne
     public function personne()

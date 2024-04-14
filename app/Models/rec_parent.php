@@ -2,25 +2,26 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class RecParent extends Model
 {
+    use HasFactory;
+
     protected $table = 'rec_parent';
-    protected $primaryKey = ['ID_RECLAMATION', 'ID_REC_PARENT'];
+    protected $primaryKey = 'ID_RECLAMATION';
     public $incrementing = false;
-    public $timestamps = false;
+    protected $keyType = 'string';
 
     protected $fillable = [
-        'ID_RECLAMATION', 
-        'ID_REC_PARENT', 
-        'ID_OBJET', 
-        'ANNEE_SCOLAIRE', 
-        'CIN', 
-        'ID_PARENT', 
-        'ID_ELEVE', 
-        'CONTENUE', 
-        'DATE_RECLAMATION'
+        'ID_RECLAMATION',
+        'ID_OBJET',
+        'ANNEE_SCOLAIRE',
+        'ID_ELEVE',
+        'CIN',
+        'CONTENUE',
+        'DATE_RECLAMATION',
     ];
 
     // Relations
@@ -37,7 +38,7 @@ class RecParent extends Model
 
     public function parent()
     {
-        return $this->belongsTo(Parent::class, 'ID_PARENT', 'ID_PARENT');
+        return $this->belongsTo(Parent::class, 'CIN', 'CIN');
     }
 
     public function eleve()

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -6,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Assistante extends Model
 {
     protected $table = 'assistante';  
-    protected $primaryKey = ['CIN', 'ID_ASSISTANTE'];
+    protected $primaryKey = 'CIN';
     public $incrementing = false; // Assuming CIN is not auto-incrementing
     protected $keyType = 'string';
     public $timestamps = false;
@@ -26,18 +27,18 @@ class Assistante extends Model
     // Relation avec la table 'vehicule' via 'ID_ASSISTANTE'
     public function vehicules()
     {
-        return $this->hasMany(Vehicule::class, 'ID_ASSISTANTE', 'ID_ASSISTANTE');
+        return $this->hasMany(Vehicule::class, 'ID_ASSISTANTE', 'CIN');
     }
 
     // Relation avec la table 'affecter' via 'ID_ASSISTANTE'
     public function affectations()
     {
-        return $this->hasMany(Affecter::class, 'ID_ASSISTANTE', 'ID_ASSISTANTE');
+        return $this->hasMany(Affecter::class, 'ID_ASSISTANTE', 'CIN');
     }
 
     // Relation avec la table 'rec_assistante' via 'ID_ASSISTANTE'
     public function reclamations()
     {
-        return $this->hasMany(RecAssistante::class, 'ID_ASSISTANTE', 'ID_ASSISTANTE');
+        return $this->hasMany(RecAssistante::class, 'ID_ASSISTANTE', 'CIN');
     }
 }

@@ -10,19 +10,21 @@ class CreateEleveTable extends Migration
     {
         Schema::create('eleve', function (Blueprint $table) {
             $table->string('ID_ELEVE', 100)->primary();
-            $table->string('CIN', 100);
-            $table->string('ID_PARENT', 100);
             $table->string('ID_VEHICULE', 50);
+            $table->string('CIN', 100);
             $table->string('NOM', 100)->nullable();
             $table->string('PRENOM', 100)->nullable();
             $table->date('DATE_NAISS')->nullable();
             $table->string('NUM_PLACE', 100)->nullable();
             $table->longText('ADRESSE')->nullable();
             $table->tinyInteger('PRESENCE')->nullable();
+            
+            $table->timestamps();
 
-            // Foreign key constraints
-            $table->foreign('ID_VEHICULE')->references('ID_VEHICULE')->on('vehicule')->onDelete('cascade');
-            $table->foreign(['CIN', 'ID_PARENT'])->references(['CIN', 'ID_PARENT'])->on('parent')->onDelete('cascade');
+            // Contraintes de clé étrangère
+            $table->foreign('ID_VEHICULE')->references('ID_VEHICULE')->on('vehicule');
+            $table->foreign('CIN')->references('CIN')->on('parents');
+
         });
     }
 

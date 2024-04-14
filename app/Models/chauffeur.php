@@ -2,40 +2,49 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Chauffeur extends Model
 {
-    // Indique que la clé primaire n'est pas auto-incrémentée
+    use HasFactory;
+
+    protected $table = 'chauffeur';
+    protected $primaryKey = 'CIN';
     public $incrementing = false;
-
-    // Définit la clé primaire composite
-    protected $primaryKey = ['CIN', 'ID_CHAUFFEUR'];
-
-    // Définit le type de données de la clé primaire
     protected $keyType = 'string';
 
-    // Les autres attributs du modèle
     protected $fillable = [
-        'CIN', 'ID_CHAUFFEUR', 'ID_ROLE', 'NOM', 'PRENOM', 'TELEPHONE', 'EMAIL', 'MDP', 'DATE_DEBUT', 'EXPERIENCE'
+        'CIN',
+        'ID_ROLE',
+        'NOM',
+        'PRENOM',
+        'TELEPHONE',
+        'EMAIL',
+        'MDP',
+        'DATE_DEBUT',
+        'EXPERIENCE',
     ];
 
-    // Les relations avec d'autres modèles
+    // Relation avec la table Personne (un chauffeur est une personne)
     public function personne()
     {
         return $this->belongsTo(Personne::class, 'CIN', 'CIN');
     }
 
+    // Relation avec la table Vehicule (un chauffeur peut conduire plusieurs véhicules)
     public function vehicules()
     {
         return $this->hasMany(Vehicule::class, 'CIN', 'CIN');
     }
 
+    // Relation avec la table Permis (un chauffeur peut avoir plusieurs permis)
     public function permis()
     {
         return $this->hasMany(Permis::class, 'CIN', 'CIN');
     }
 
+    // Relation avec la table Affecter (un chauffeur peut être affecté à plusieurs trajets)
     public function affectations()
     {
         return $this->hasMany(Affecter::class, 'CIN', 'CIN');

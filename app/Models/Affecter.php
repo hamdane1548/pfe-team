@@ -2,18 +2,41 @@
 
 namespace App\Models;
 
-
-
 use Illuminate\Database\Eloquent\Model;
 
 class Affecter extends Model
 {
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
     protected $table = 'affecter';
-    protected $primaryKey = ['ANNEE_SCOLAIRE', 'ID_VEHICULE', 'ASS_CIN', 'ID_ASSISTANTE', 'CIN', 'ID_CHAUFFEUR'];
-    public $incrementing = false;
-    public $timestamps = false;
 
-    public function vehicule()
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = ['ASS_CIN', 'CIN', 'ANNEE_SCOLAIRE', 'ID_VEHICULE'];
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'ASS_CIN', 'CIN', 'ANNEE_SCOLAIRE', 'ID_VEHICULE', 'DATE_D_AFFECTATION'
+    ];
+
+      public function vehicule()
     {
         return $this->belongsTo(Vehicule::class, 'ID_VEHICULE', 'ID_VEHICULE');
     }
@@ -33,4 +56,3 @@ class Affecter extends Model
         return $this->belongsTo(AnneeScolaire::class, 'ANNEE_SCOLAIRE', 'ANNEE_SCOLAIRE');
     }
 }
-

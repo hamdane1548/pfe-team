@@ -1,36 +1,51 @@
 <?php
+
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Parent extends Model
 {
-    protected $table = 'parent';
-    protected $primaryKey = ['CIN', 'ID_PARENT'];
-    public $incrementing = false;
-    public $timestamps = false;
+    use HasFactory;
 
-    // Définir la relation avec la table Personne
+    protected $table = 'parents';
+    protected $primaryKey = 'CIN';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'CIN',
+        'ID_ROLE',
+        'NOM',
+        'PRENOM',
+        'TELEPHONE',
+        'EMAIL',
+        'MDP',
+        'DATE_DEBUT'
+    ];
+
+    // Relation avec Personne
     public function personne()
     {
-        return $this->belongsTo('App\Models\Personne', 'CIN', 'CIN');
+        return $this->belongsTo(Personne::class, 'CIN', 'CIN');
     }
 
-    // Définir la relation avec la table Role
+    // Relation avec Role
     public function role()
     {
-        return $this->belongsTo('App\Models\Role', 'ID_ROLE', 'ID_ROLE');
+        return $this->belongsTo(Role::class, 'ID_ROLE', 'id');
     }
 
-    // Définir la relation avec la table Eleve
+    // Relation avec Eleve
     public function eleves()
     {
-        return $this->hasMany('App\Models\Eleve', 'CIN', 'CIN');
+        return $this->hasMany(Eleve::class, 'CIN_PARENT', 'CIN');
     }
 
-    // Définir la relation avec la table Reclamation
+    // Relation avec Reclamation
     public function reclamations()
     {
-        return $this->hasMany('App\Models\Reclamation', 'CIN', 'CIN');
+        return $this->hasMany(Reclamation::class, 'CIN_PARENT', 'CIN');
     }
 }
