@@ -19,6 +19,10 @@ class CreateEleveTable extends Migration
             $table->string('NUM_PLACE', 100)->nullable();
             $table->longText('ADRESSE')->nullable();
             $table->tinyInteger('PRESENCE')->nullable();
+
+            // Foreign key constraints
+            $table->foreign('ID_VEHICULE')->references('ID_VEHICULE')->on('vehicule')->onDelete('cascade');
+            $table->foreign(['CIN', 'ID_PARENT'])->references(['CIN', 'ID_PARENT'])->on('parent')->onDelete('cascade');
         });
     }
 

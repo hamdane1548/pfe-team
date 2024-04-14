@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 class Parent extends Model
 {
     protected $table = 'parent';
-    protected $primaryKey = 'CIN';
+    protected $primaryKey = ['CIN', 'ID_PARENT'];
     public $incrementing = false;
     public $timestamps = false;
 

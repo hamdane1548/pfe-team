@@ -14,7 +14,7 @@ class CreateAnneeScolaireTable extends Migration
     public function up()
     {
         Schema::create('annee_scolaire', function (Blueprint $table) {
-            $table->increments('ANNEE_SCOLAIRE');
+            $table->increments('ANNEE_SCOLAIRE')->primary();
             // Ajoutez d'autres colonnes si nécessaire
 
             // Exemple de colonne avec index

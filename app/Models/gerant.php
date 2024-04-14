@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gerant extends Model
 {
-    protected $table = 'gerant';
-    protected $primaryKey = 'CIN';
+    protected $table = 'gerant';   
+     protected $primaryKey = ['CIN', 'ID_GERANT'];
     public $incrementing = false;
     protected $keyType = 'string';
     public $timestamps = false;

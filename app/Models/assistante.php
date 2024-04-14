@@ -5,8 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Assistante extends Model
 {
-    protected $table = 'assistante';
-    protected $primaryKey = 'CIN'; // Assuming CIN is the primary key
+    protected $table = 'assistante';  
+    protected $primaryKey = ['CIN', 'ID_ASSISTANTE'];
     public $incrementing = false; // Assuming CIN is not auto-incrementing
     protected $keyType = 'string';
     public $timestamps = false;

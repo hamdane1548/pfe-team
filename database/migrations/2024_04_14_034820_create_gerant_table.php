@@ -15,7 +15,7 @@ class CreateGerantTable extends Migration
     {
         Schema::create('gerant', function (Blueprint $table) {
             $table->string('CIN', 100)->primary();
-            $table->string('ID_GERANT', 100);
+            $table->string('ID_GERANT', 100)->primary();
             $table->string('ID_ROLE', 100);
             $table->string('NOM', 100)->nullable();
             $table->string('PRENOM', 100)->nullable();

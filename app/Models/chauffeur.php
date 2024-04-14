@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Chauffeur extends Model
 {
-    protected $primaryKey = 'CIN';
-    public $incrementing = false;
+    protected $primaryKey = ['CIN', 'ID_CHAUFFEUR'];
+    public $incrementing = false; 
     protected $keyType = 'string';
 
     protected $fillable = [

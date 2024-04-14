@@ -16,14 +16,15 @@ class CreateAffecterTable extends Migration
             $table->string('CIN', 100);
             $table->string('ID_CHAUFFEUR', 100);
             $table->date('DATE_D_AFFECTATION')->nullable();
-            
-            // Définir les clés étrangères
-            $table->foreign(['CIN', 'ID_CHAUFFEUR'])->references(['CIN', 'ID_CHAUFFEUR'])->on('chauffeur');
+
+            // Define foreign keys
+           
             $table->foreign('ID_VEHICULE')->references('ID_VEHICULE')->on('vehicule');
+            $table->foreign(['CIN', 'ID_CHAUFFEUR'])->references(['CIN', 'ID_CHAUFFEUR'])->on('chauffeur');
             $table->foreign(['ASS_CIN', 'ID_ASSISTANTE'])->references(['CIN', 'ID_ASSISTANTE'])->on('assistante');
-            
-            // Définir d'autres clés étrangères si nécessaire
-            
+
+            // Define other foreign keys if necessary
+
             $table->primary(['ANNEE_SCOLAIRE', 'ID_VEHICULE', 'ASS_CIN', 'ID_ASSISTANTE', 'CIN', 'ID_CHAUFFEUR']);
         });
     }

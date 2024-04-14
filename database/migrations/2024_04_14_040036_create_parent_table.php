@@ -9,7 +9,7 @@ class CreateParentTable extends Migration
     {
         Schema::create('parent', function (Blueprint $table) {
             $table->string('CIN', 100)->primary();
-            $table->string('ID_PARENT', 100);
+            $table->string('ID_PARENT', 100)->primary();
             $table->string('ID_ROLE', 100);
             $table->string('NOM', 100)->nullable();
             $table->string('PRENOM', 100)->nullable();

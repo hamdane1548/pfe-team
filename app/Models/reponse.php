@@ -1,37 +1,24 @@
 <?php
 
 namespace App\Models;
+use App\Models\Gerant;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Reponse extends Model
 {
     protected $table = 'reponse';
-    protected $primaryKey = ['ID_MESSAGE', 'CIN', 'ID_GERANT'];
-    public $incrementing = false;
-    public $timestamps = false;
+    protected $primaryKey = ['ID_MESSAGE', 'CIN', 'ID_GERANT']; // Assuming composite primary key
+    public $incrementing = false; // Assuming composite primary key is not auto-incrementing
+    protected $keyType = 'string';
 
-    protected $fillable = [
-        'ID_MESSAGE',
-        'CIN',
-        'ID_GERANT',
-        'REPONSE',
-        'DATE_REPONSE',
-    ];
+    public function gerant()
+    {
+        return $this->belongsTo(Gerant::class, 'CIN', 'ID_GERANT');
+    }
 
-    /**
-     * Relation avec la table "message"
-     */
     public function message()
     {
         return $this->belongsTo(Message::class, 'ID_MESSAGE', 'ID_MESSAGE');
-    }
-
-    /**
-     * Relation avec la table "gerant"
-     */
-    public function gerant()
-    {
-        return $this->belongsTo(Gerant::class, 'CIN', 'CIN');
     }
 }
