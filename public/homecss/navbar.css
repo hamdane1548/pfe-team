@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,500&display=swap');
+.navbar-nav{
+  margin: auto; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    font-family: "Roboto Condensed", sans-serif;
+}
+.nav-item{
+margin-left: 30px;
+}
+.navbar .dropdown-menu {
+   right: 1%;
+   top: 100%;
+}
+.dropdown{
+  margin-right: 10px;
+}
+@media(max-width :900px){
+  .navbar .dropdown-menu {
+    right: 20%;
+    top: 120%;
+ }
+ .dropdown{
+   margin-right: 10px;
+ }
+}
+.my-nav {
+  height: 70px; 
+
+}
+
+@media (max-width: 990px) {
+  .my-nav{
+    height: 10px;
+    margin-top: -5%;
+  }
+}
+#offcanvasDarkNavbar {
+  width: 30%;
+}
+
+.item:active{
+  color: black;
+  
+}
