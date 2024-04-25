@@ -36,16 +36,16 @@
               Company
             </h6>
             <p>
-              <a href="#!" class="text-reset">Home</a>
+              <a href="/" class="text-reset">Home</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">about</a>
+              <a href="/about" class="text-reset">about</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">contact</a>
+              <a href="/contact" class="text-reset">contact</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Blogs</a>
+              <a href="/single" class="text-reset">Blogs</a>
             </p>
           </div>
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">

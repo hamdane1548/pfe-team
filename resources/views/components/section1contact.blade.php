@@ -1,7 +1,11 @@
    <div class="container-fuild">
 <div class="justify-content-centre">
              <h1>CONTACT US</h1>
-             <p   class="mx-auto text-center" style="width: 600px;">Notre équipe est toujours à votre disposition pour répondre à vos questions, recevoir vos commentaires et vous assister dans tous les aspects liés à nos services. Que vous soyez un client existant, un partenaire potentiel ou simplement intéressé par nos activités, n'hésitez pas à nous contacter à tout moment. Nous nous engageons à vous fournir une assistance rapide, professionnelle et personnalisée.</p>
+             <p   class="mx-auto text-center" style="width: 600px;">Notre équipe est toujours à votre disposition pour répondre à vos questions,<br> 
+             recevoir vos commentaires et vous assister dans tous les aspects <br>  liés à nos services.
+             Que vous soyez un client existant,<br>  un partenaire potentiel ou simplement intéressé par nos activités, <br>
+               n'hésitez pas à nous contacter à tout moment. <br>  Nous nous engageons à vous fournir une assistance rapide, <br>
+               professionnelle et personnalisée.</p>
   </div>
    </div>
     

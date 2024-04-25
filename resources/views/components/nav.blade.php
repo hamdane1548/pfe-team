@@ -17,13 +17,13 @@
           <a class="nav-link" aria-current="page"  href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/profile">Article</a>
+          <a class="nav-link" href="/single">Article</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/info">about</a>
+          <a class="nav-link" href="/about">about</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/store">contact</a>
+          <a class="nav-link" href="/contact">contact</a>
         </li>
       </ul>
       <div class="dropdown">
