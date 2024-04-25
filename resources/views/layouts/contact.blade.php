@@ -23,7 +23,7 @@
        @include('components.section1contact')
        @include('components.section2contact')
     </main>
-    @include('components.footer')
+    @include('components.footer2')
 </body>
 
 </html>

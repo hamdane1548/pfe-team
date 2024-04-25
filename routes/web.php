@@ -8,6 +8,7 @@ use App\Http\Controllers\homecontroller;
 use App\Http\Controllers\about;
 use App\Http\Controllers\contactcontrolleur;
 use App\Http\Controllers\singlecontrolleur;
+use App\Http\Controllers\dashbordcontrolleur;
 use Termwind\Components\Dd;
 
 /*
@@ -30,7 +31,10 @@ use Termwind\Components\Dd;
 // PATCH pour modifie par exampl suelement le nom 
 Route::get('/',[homecontroller::class,'index']);
 Route::get('/about',[about::class,'about']);
+Route::get('/admin',[dashbordcontrolleur::class,'dashbord']);
 Route::get('/contact',[contactcontrolleur::class,'contact']);
 Route::get('/single',[singlecontrolleur::class,'single']);
+Route::post('/login', [contactcontrolleur::class, 'login'])->name('login');
+
 
 

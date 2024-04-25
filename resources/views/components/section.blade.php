@@ -17,9 +17,9 @@
   </div>
   <script>
     var descriptions = [
-        "Chez SafeRide Kids, la sécurité et le bien-être de vos enfants<br> sont notre  priorité absolue. Nous comprenons les préoccupations des parents en matière de transport scolaire, c'est pourquoi nous nous engageons à offrir un service fiable, sûr et professionnel..",
-        "Notre flotte de bus scolaires modernes et bien entretenus est <br>spécialement  conçue pour assurer le confort et la sécurité de vos enfants tout au long de leur trajet vers et depuis l'école. Nos chauffeurs qualifiés et expérimentés sont dévoués à assurer un voyage agréable et sécurisé pour chaque élève..",
-        "La sécurité est notre priorité absolue. Nos véhicules sont équipés <br> des dernières technologies de sécurité, et nous mettons en œuvre des protocoles stricts pour garantir un environnement sécurisé à bord. De plus, nos conducteurs sont formés pour réagir efficacement à toute situation d'urgence."
+        "Chez SafeRide Kids, la sécurité et le bien-être de vos enfants<br> sont notre  priorité absolue. Nous comprenons les préoccupations des parents <br> en matière de transport scolaire, c'est pourquoi nous nous engageons à offrir <br> un service fiable, sûr et professionnel..",
+        "Notre flotte de bus scolaires modernes et bien entretenus est <br>spécialement  conçue pour assurer le confort et la sécurité de vos enfants tout <br> au long de leur trajet vers et depuis l'école. Nos chauffeurs qualifiés et expérimentés <br>sont dévoués à assurer un voyage agréable et sécurisé pour chaque élève..",
+        "La sécurité est notre priorité absolue. Nos véhicules sont équipés <br> des dernières technologies de sécurité, et nous mettons en œuvre des protocoles <br> stricts  pour garantir un environnement sécurisé à bord. De plus, nos conducteurs <br>sont formés pour réagir efficacement à toute situation d'urgence."
     ];
     var currentIndex = 0;
     function updateDescription() {
